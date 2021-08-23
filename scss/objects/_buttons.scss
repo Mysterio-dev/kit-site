@@ -1,0 +1,120 @@
+.btn-main {
+  border: 2px solid $pink;
+  z-index: 1;
+  color: $white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: $pink;
+    transition: all 0.5s ease;
+  }
+
+  &:hover.btn-main::after {
+    top: auto;
+    bottom: 0;
+    height: 100%;
+  }
+
+  &:hover {
+    color: $white;
+  }
+
+}
+
+.btn-send {
+  transition: all 0.5s ease;
+  color: $white;
+  background-image: linear-gradient(90deg, #ff0083, #ff0d42, #ff0d42, #ff0083);
+  background-size: 300% 100%;
+  border-radius: 20px;
+  border: 0;
+  font-weight: 600;
+  font-size: 14px;
+  background-color: transparent;
+  padding: 0.85rem 2rem;
+
+  &:hover {
+    background-position: 100% 0;
+    transition: all .4s ease-in-out;
+  }
+}
+
+.btn-default {
+  border: 2px solid $pink;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: color .2s, background-color .2s, border-color .2s;
+  position: relative;
+  background: transparent;
+  overflow: hidden;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    width: 0;
+    transition: width .4s ease-in-out;
+    z-index: -1;
+    background-color: $pink;
+
+  }
+
+  &:hover.btn-default::before {
+    width: calc(100% + 2px);
+  }
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 30px;
+  bottom: 30px;
+  z-index: 996;
+  background: $pink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-duration: 400ms;
+
+  svg {
+    color: $white;
+  }
+
+  &:hover {
+    transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+  }
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}

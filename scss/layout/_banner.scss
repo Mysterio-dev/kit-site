@@ -1,0 +1,105 @@
+.main-banner {
+  min-height: calc(100vh - 111px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__wrapper {
+    background: radial-gradient(87.94% 298.21% at 87.94% 35.3%, #F7FAFF 12.1%, #F7FAFF 78.25%);
+    height: 100vh;
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__title {
+    font-size: 65px;
+    font-weight: 800;
+    color: #343745;
+    margin-bottom: 6rem;
+
+    .highlight {
+      color: $pink;
+    }
+
+  }
+
+  &__text {
+    font-size: 22px;
+    margin-bottom: 2rem;
+    font-weight: 300;
+
+    span {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__grid {
+    max-width: 650px;
+    width: 100%;
+    margin-left: 15.5rem;
+    transition: all 0.3s;
+  }
+
+  &__logo {
+    position: absolute;
+    right: 0;
+    z-index: 1;
+
+    svg {
+      width: 640px;
+      height: 465px;
+      transition: all 0.3s;
+    }
+  }
+
+}
+
+.main {
+  &__link {
+    transition: all .35s ease;
+    font-weight: 400;
+    color: $dark-gray;
+
+    svg {
+      transition: all .35s ease;
+      margin-left: 1rem;
+    }
+
+    &:hover {
+      color: $pink;
+    }
+
+    &:hover svg {
+      transform: translateX(8px);
+    }
+  }
+}
+
+.icon-1c {
+  &::before {
+    content: '';
+    background: url('../img/layers/1c.png') no-repeat;
+    background-size: contain;
+    width: 160px;
+    height: 30px;
+    display: block;
+    margin-top: -2px;
+
+  }
+}
+
+
+.splitting .char {
+  animation: slide-in 0.8s cubic-bezier(.1, 0, .2, 1) both;
+  animation-delay: calc(40ms * var(--char-index));
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+  }
+}
